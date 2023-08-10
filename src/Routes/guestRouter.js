@@ -1,7 +1,7 @@
-const GuestController = require('../Controller/registerGuestController')
+const GuestController = require('../Controller/guestController')
 const route = require('express').Router()
 
 
-route.get('/register', GuestController.register)
+route.get('/', GuestController.getAll)
 
 module.exports = route
