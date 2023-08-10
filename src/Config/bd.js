@@ -1,7 +1,9 @@
+require('dotenv').config()
+
 module.exports = {
-    database: 'lwsistemas_infinityglobal',
-    username: 'yym4d1tcaj1ti8gj1zuq',
-    host: 'aws.connect.psdb.cloud',
+    database: process.env.DB_DATABASE,
+    username: process.env.DB_USERNAME,
+    host: process.env.DB_HOST,
     dialect: 'mysql',
     dialectOptions: {
         ssl: {
@@ -9,6 +11,6 @@ module.exports = {
             rejectUnauthorized: false,
         },
     },
-    password: 'pscale_pw_mhBKrYhdc323pebzYfJ8TJOkiPQkMoWAHV08nn7q8Ob',
+    password: process.env.DB_PASS,
     logging: false
 }
