@@ -48,6 +48,21 @@ class GuestController {
             return res.status(400).json(error)
         }
     }
+    static async comfirmed(req, res) {
+        try {
+            const { isConfirmed, quantity } = req.body
+            let id = req.params.id;
+            let returnUpdate = await GuestModel.update({ quantity, isConfirmed }, { where: { id } });
+            if (returnUpdate != null) {
+                return res.status(200).json(returnUpdate)
+            } else {
+                return res.status(400).json({ 'msg': "Erro ao atualizar" })
+            }
+        } catch (error) {
+            console.log(error)
+            return res.status(400).json(error)
+        }
+    }
 }
 
 module.exports = GuestController
