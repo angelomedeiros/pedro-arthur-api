@@ -63,6 +63,20 @@ class GuestController {
             return res.status(400).json(error)
         }
     }
+    static async deletePeople(req, res) {
+        try {
+            let id = req.params.id;
+            let returnDelete = await GuestModel.destroy({ where: { id } });
+            if (returnDelete != null) {
+                return res.status(200).json(returnDelete)
+            } else {
+                return res.status(400).json({ 'msg': "Erro ao deletar" })
+            }
+        } catch (error) {
+            console.log(error)
+            return res.status(400).json(error)
+        }
+    }
 }
 
 module.exports = GuestController
