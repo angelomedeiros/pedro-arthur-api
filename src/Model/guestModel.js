@@ -11,6 +11,9 @@ class GuestModel extends Model {
             },
             isConfirmed: {
                 type: DataTypes.INTEGER
+            },
+            suggestion: {
+                type: DataTypes.STRING
             }
         }, {
             sequelize,

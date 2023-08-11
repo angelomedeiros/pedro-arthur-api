@@ -33,6 +33,21 @@ class GuestController {
             return res.status(400).json(error)
         }
     }
+    static async register(req, res) {
+        try {
+            const { name, suggestion } = req.body
+            let returnCreate = await GuestModel.create({ name, suggestion });
+            console.log(returnCreate.id);
+            if (returnCreate.id != null) {
+                return res.status(200).json(returnCreate)
+            } else {
+                return res.status(400).json({ 'msg': "Erro ao criar" })
+            }
+        } catch (error) {
+            console.log(error)
+            return res.status(400).json(error)
+        }
+    }
 }
 
 module.exports = GuestController
