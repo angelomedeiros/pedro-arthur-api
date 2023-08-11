@@ -8,6 +8,9 @@ class GuestModel extends Model {
             },
             quantity: {
                 type: DataTypes.INTEGER
+            },
+            isConfirmed: {
+                type: DataTypes.INTEGER
             }
         }, {
             sequelize,
