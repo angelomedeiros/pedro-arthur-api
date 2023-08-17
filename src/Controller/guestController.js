@@ -37,7 +37,6 @@ class GuestController {
         try {
             const { name, suggestion } = req.body
             let returnCreate = await GuestModel.create({ name, suggestion });
-            console.log(returnCreate.id);
             if (returnCreate.id != null) {
                 return res.status(200).json(returnCreate)
             } else {
