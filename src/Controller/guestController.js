@@ -16,7 +16,7 @@ class GuestController {
     static async getById(req, res) {
         try {
             let id = req.params.id;
-            const guest = await GuestModel.findOne({ id })
+            const guest = await GuestModel.findOne({ where: { id } })
             return res.status(200).json(guest)
         } catch (error) {
             console.log(error)
