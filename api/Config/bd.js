@@ -5,6 +5,7 @@ module.exports = {
     username: process.env.DB_USERNAME,
     host: process.env.DB_HOST,
     dialect: 'mysql',
+    dialectModule: require('mysql2'),
     dialectOptions: {
         ssl: {
             require: true,
