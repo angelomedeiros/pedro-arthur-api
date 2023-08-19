@@ -6,10 +6,10 @@
             "use": "@vercel/node"
         }
     ],
-    "env": {
-        "DB_DATABASE": "deznorteados",
-        "DB_USERNAME": "8bvopy62pqzwqza5wzfz",
-        "DB_HOST": "aws.connect.psdb.cloud",
-        "DB_PASSWORD": "pscale_pw_C5nwr14kv30vRX1xfduDK8KHgwU2Y4sVWb5Xsl1iPpP"
-    }
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "index.js"
+        }
+    ]
 }
