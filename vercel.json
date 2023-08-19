@@ -6,12 +6,6 @@
             "use": "@vercel/node"
         }
     ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "index.js"
-        }
-    ],
     "env": {
         "DB_DATABASE": "deznorteados",
         "DB_USERNAME": "8bvopy62pqzwqza5wzfz",
